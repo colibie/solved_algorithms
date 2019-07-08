@@ -19,3 +19,15 @@ const targetFunction = (nums, target) => {
 }
 console.log(targetFunction(nums, target));
 //output = [1, 3]
+
+//OR
+//I think this is less space complex
+function getTarget(nums, target){
+  for (let i = 0; i<nums.length-1; i++){
+    for (let j = nums.length - 1; j>i; j--){
+      if((nums[i]+nums[j] === target)) return [i, j];
+    }
+  }
+  return 'none'
+}
+console.log(getTarget(nums, target));
