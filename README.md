@@ -1,6 +1,6 @@
 # Algorithms and Data Structures
 
-This project contains a collection of algorithm and data structure questions I've been able to solve, all in JavaScript.
+This project contains a collection of algorithm and data structure questions I've been able to solve, in Java and JavaScript.
 
 I use it for learning purposes.
 
