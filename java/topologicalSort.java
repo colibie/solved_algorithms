@@ -12,7 +12,8 @@ public class topologicalSort {
   }
 
   // do a depth first search, and then add any vertex returned from, to a stack.
-  // meaning, the last vertex must be returned, b4 the one following it, b4 the next...
+  // meaning, the last vertex must be returned, b4 the one following it, b4 the
+  // next...
   private void DFS(int v) {
     if (marked[v])
       return;
@@ -52,30 +53,33 @@ public class topologicalSort {
         return true;
       cycleDFS(edge, recStack);
     }
-    postOrder.push(v);
     recStack[v] = false;
     return false;
   }
 
   public static void main(String[] args) {
-    DiGraph input = new DiGraph(7);
+    DiGraph input = new DiGraph(5);
     input.addEdge(0, 1);
-    input.addEdge(1, 4);
-    input.addEdge(0, 5);
     input.addEdge(0, 2);
-    input.addEdge(6, 0);
-    input.addEdge(6, 4);
-    input.addEdge(3, 5);
+    input.addEdge(1, 3);
+    input.addEdge(1, 4);
     input.addEdge(3, 4);
-    input.addEdge(3, 6);
     input.addEdge(3, 2);
-    input.addEdge(5, 2);
+    // input.addEdge(3, 5);
+    // input.addEdge(3, 4);
+    // input.addEdge(3, 6);
+    // input.addEdge(3, 2);
+    // input.addEdge(5, 2);
     // input.addEdge(4, 0);
 
     topologicalSort test = new topologicalSort(input);
     System.out.println(test.hasCycle());
-    // for (Integer value : test.sort()) {
-    //   System.out.println(value);
-    // }
+
+    // note that this only returns correct ordering because Iterable iterates in
+    // the order the elements are stored inside the stack. For direct
+    // implementation, use Deque
+    for (Integer value : test.sort()) {
+      System.out.println(value);
+    }
   }
 }
