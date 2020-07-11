@@ -1,3 +1,5 @@
+package google;
+
 import java.util.Scanner;
 // new BufferedReader(new InputStreamReader(System.in)
 
