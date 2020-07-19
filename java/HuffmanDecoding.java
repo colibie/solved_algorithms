@@ -5,12 +5,12 @@ public class HuffmanDecoding {
   //   Node right;
   //   int depth;
 
-  //   Node(int data, int depth) {
+  //   Node(final int data, final int depth) {
   //     this.data = data;
   //     this.depth = depth;
   //   }
   // }
-  public HuffmanDecoding(String s, Node root) {
+  public HuffmanDecoding(final String s, final Node root) {
     if (root == null) {
       System.out.print("");
       return;
@@ -18,7 +18,7 @@ public class HuffmanDecoding {
     for (int i = 0; i < s.length();) {
       Node current = root;
       while (current.left != null || current.right != null) {
-        char bit = s.charAt(i++);
+        final char bit = s.charAt(i++);
         if (bit == '1')
           current = current.right;
         else
