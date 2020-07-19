@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Main {
+class KillProcess {
   static public LinkedList<Integer> killProcess(int[] pid, int[] ppid, int kill) {
     // PID = [1, 3, 10, 5], PPID = [3, 0, 5, 3], killID = 5
     HashMap<Integer, LinkedList<Integer>> tree = new HashMap<>();
@@ -48,7 +48,7 @@ class Main {
     int[] pid = {10, 8, 3, 7, 6, 1, 5, 2, 4, 9};
     int[] ppid = {5, 10, 0, 2, 1, 3, 3, 1, 5, 10};
     int kill = 2;
-    LinkedList<Integer> killed = Main.killProcess(pid, ppid, kill);
+    LinkedList<Integer> killed = KillProcess.killProcess(pid, ppid, kill);
     System.out.println(killed.toString());
   }
 }
