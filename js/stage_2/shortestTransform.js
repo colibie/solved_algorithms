@@ -9,9 +9,6 @@
  * giving transformation length as 5.
  */
 
-let start = 'hit', end = 'cog';
-let dict = ['hot','dot','dog','lot','log', 'cog'];
-
 //function to check if two words are adjacent
 function isAdjacent(word1, word2){
   let count = 0;
@@ -22,47 +19,42 @@ function isAdjacent(word1, word2){
   return (count == 1) ? true: false; 
 }
 
-//dfs
+//bfs
 function shortestTransform (begin, end, dict){
-  let item = {word: begin, len: 0};
-  let queue = [item];
+  let count = 1;
+  let queue = [begin]; 
+
+  let seen = {};
+
   while(queue.length > 0){
-    let curItem = queue.pop();
-    
-    for( let i = 0; i<dict.length; i++){
-      if (isAdjacent(curItem.word, dict[i])){
-        item.word = dict[i];
-        item.len = curItem.len + 1;
-        queue.push(item);
+    let level = [];
 
-        if (dict[i] == end){
-          return item.len;
+    // for each word in the queue
+    for (let i = 0; i < queue.length; i++) {
+      let curItem = queue[i];
+
+      if (queue[i] == end){
+        return count;
+      }
+
+      // add their children only if we've not seen that word before
+      // this is inefficient because you are checking each word in dict
+      // check variations of the current word and see if it exists in dict(convert dict to obj for o(1) search)
+      // SEE WORD LADDER JAVA IMPLEMENTATION
+      for(let j = 0; j < dict.length; j++){
+        if (isAdjacent(curItem, dict[j]) && !seen[dict[j]]){
+          seen[dict[j]] = true;
+          level.push(dict[j]);
         }
-        //delete ajacent word so as to not search again
-        dict.splice(i, 1);
       }
     }
+    queue = level;
+    count++;
   }
   return 0;
 }
+
+let start = 'hit', end = 'cog', dict = ['hot','dot','dog','lot','log', 'cog'];
+// let start = 'a', end = 'c', dict = ['a','b','c'];
+
 console.log(shortestTransform(start,end, dict))
-
-// This below was the first draft..Contains a couple of errors
-// DFIS i think :)
-function shortestLinearTransform (begin, end, dict){
-  let item = {word: begin, len: 0};
-
-  for( let i = 0; i<dict.length; i++){
-    if (isAdjacent(item.word, dict[i])){
-      item.word = dict[i];
-      item.len++;
-
-      if (dict[i] == end){
-        return item.len;
-      }
-      // //delete ajacent word so as to not search again
-      // dict.splice(i, 1);
-    }
-  }
-  return 0;
-}

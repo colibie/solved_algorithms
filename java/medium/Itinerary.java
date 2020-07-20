@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
 
-public class itinerary {
+public class Itinerary {
+  // priority queue takes care of the ordering
   Map<String, PriorityQueue<String>> airports = new HashMap<>();
   List<String> route = new LinkedList<>();
 
@@ -35,7 +36,7 @@ public class itinerary {
   public static void main(String[] args) {
     String[][] input = {{"MUC", "LHR"}, {"JFK", "MUC"}, {"SFO", "SJC"}, {"LHR", "SFO"}};
 
-    List<String> res = new itinerary().itinerary(input);
+    List<String> res = new Itinerary().itinerary(input);
     System.out.println(res.toString());
   }
 }
