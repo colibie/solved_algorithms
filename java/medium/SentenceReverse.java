@@ -24,7 +24,7 @@ class SentenceReverse {
         start--; cur++;
       }
 
-      while(arr[start] != ' ' && start >= 0) {
+      while(start >= 0 && arr[start] != ' ') {
         start--;
       }
 
