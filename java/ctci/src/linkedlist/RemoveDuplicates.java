@@ -7,21 +7,17 @@ import java.util.HashSet;
  * FOLLOW UP; How would you do it if a temporary buffer was not allowed?
  */
 import java.util.*;
-
+import Library.*;
 public class RemoveDuplicates {  
-  private class LinkedListNode {
-    char value;
-    LinkedListNode next; 
-  }
 
-  private LinkedListNode solve(LinkedListNode head) {
+  private ListNode solve(ListNode head) {
     if (head == null) return head;
     // keep track of previous node
     // connect prevous to next of node if node is duplicate
     Set<Character> seen = new HashSet<>();
 
-    LinkedListNode prev = null;
-    LinkedListNode cur = head;    
+    ListNode prev = null;
+    ListNode cur = head;    
     while (cur != null) {
       if (seen.contains(cur.value)) {
         prev.next = cur.next;
@@ -35,6 +31,6 @@ public class RemoveDuplicates {
   }
 
   /**
-   * Follow up, use an additional pointer to check the rest of the list while in cur
+   * Follow up: use an additional pointer to check the rest of the list while in cur node
    */
 }
