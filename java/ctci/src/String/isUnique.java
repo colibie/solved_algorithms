@@ -7,12 +7,12 @@ import java.util.*;
 
 public class isUnique {
   public static boolean solution(String s) {
-    Map<Character, Integer> freqCount = new HashMap<>();
+    Set<Character> seen = new HashSet<>();
 
     // O(N)
     for (int i = 0; i < s.length(); i++) {
-      if (freqCount.get(s.charAt(i)) != null) return false;
-      freqCount.put(s.charAt(i), i);
+      if (seen.contains(s.charAt(i))) return false;
+      seen.add(s.charAt(i));
     }
 
     return true;
