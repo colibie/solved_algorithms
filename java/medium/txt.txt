@@ -1,0 +1,13 @@
+"https://findtreasure.app/api/v1/games/test/65cee928-9578-44ec-9ebc-1b1b2942dfc7","https://findtreasure.app/api/v1/games/test/95f6dcf6-6820-4e86-9c9f-72c6ea6858a5","https://findtreasure.app/api/v1/games/test/start","https://findtreasure.app/api/v1/games/test/ef2e7852-f98b-4bc1-a901-919bd98d4f6b","https://findtreasure.app/api/v1/games/test/ae824669-6ebe-4352-a482-057faf46a443"
+
+https://findtreasure.app/api/v1/games/ileya/bd0582e4-9a13-494f-a6f6-0850bc776a96
+
+
+
+
+
+
+
+
+
+curl --location --request GET 'https://findtreasure.app/api/v1/games/ileya/d1b98318-4c7b-4da9-bef6-13e20509122f' --header 'gomoney: 07069037532' --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIzYWJmYjQxMC1kMjdmLTQxZWEtYjAyNC0xMmRlMDU5NzZlZWMiLCJlbWFpbCI6Implbm5pZmVyb2xpYmllQGdtYWlsLmNvbSIsIm5hbWUiOiJDaGlkZXJhIE9saWJpZSIsImlhdCI6MTU5NjE1NDAxMSwibmJmIjoxNTk2MTU0MDExLCJleHAiOjE1OTg4MzI0MTF9.P7r-8Ci75_czKWBTaYNYJPtBkje6POq6QuJxUS_TGt8'
