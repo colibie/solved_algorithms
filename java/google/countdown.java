@@ -1,6 +1,6 @@
 package google;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class countdown {
   public int solve(int[] arr, int k) {
